@@ -55,7 +55,7 @@ if __name__ == "__main__":
     # city = 'chicago'
 
     ### read dict_bbx from updated_bbx_list.json
-    with open('/home/he425/Dataset/updated_bbx_list.json') as f:
+    with open('/data/he425/Dataset/updated_bbx_list.json') as f:
         dict_bbx = json.load(f)
 
     city_idx = 0
@@ -72,7 +72,7 @@ if __name__ == "__main__":
             continue
 
         ### mkdir for the city if not exist
-        output_path = '/home/he425/Dataset/MS_Building_Dataset'
+        output_path = '/data/he425/Dataset/MS_Building_Dataset'
         if not os.path.exists(os.path.join(output_path, city)):
             os.mkdir(os.path.join(output_path, city))
 
@@ -90,7 +90,7 @@ if __name__ == "__main__":
         aoi_shape = shapely.geometry.shape(aoi_geom)
         minx, miny, maxx, maxy = aoi_shape.bounds
 
-        output_path = '/home/he425/Dataset/MS_Building_Dataset'
+        output_path = '/data/he425/Dataset/MS_Building_Dataset'
         output_fn = os.path.join(output_path, city, city + "_bldg.geojson")
 
         quad_keys = set()
